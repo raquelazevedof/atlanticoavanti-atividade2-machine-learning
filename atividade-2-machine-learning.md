@@ -5,14 +5,14 @@ Parte 1 - Funções em Python e Manipulação de Dados
 
 **1. Escreva uma função que receba uma lista de números e retorne outra lista com os números ímpares.**
 
-Filtrar números ímpares
+### Filtrar números ímpares
 
 def filtrar_impares(lista):
-   return [num for num in lista if num % 2 != 0]
+    return [num for num in lista if num % 2 != 0]
 
 ### Exemplo
 entrada = [1, 2, 3, 4, 5]
-### Retorno: [1, 3, 5]
+### Retorno esperado: [1, 3, 5]
 
 
 ---
