@@ -8,7 +8,7 @@ Parte 1 - Funções em Python e Manipulação de Dados
 Filtrar números ímpares
 
 def filtrar_impares(lista):
-    return [num for num in lista if num % 2 != 0]
+   return [num for num in lista if num % 2 != 0]
 
 ### Exemplo
 entrada = [1, 2, 3, 4, 5]
