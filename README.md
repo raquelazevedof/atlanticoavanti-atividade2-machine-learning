@@ -1,9 +1,10 @@
 Atividade 02 - Somativa
 Curso: Machine Learning 
 
-🎯 Objetivo da Atividade
+🎯 Objetivo da Atividade: 
 Avaliar o domínio da estudante sobre: Algoritmos básicos em linguagem Python,
-Manipulação de estruturas de dados, Operações fundamentais com Pandas, Leitura, tratamento e análise de dados.
+Manipulação de estruturas de dados, Operações fundamentais com Pandas, Leitura, 
+tratamento e análise de dados.
 
 📝 Estrutura da Atividade
 A atividade é composta por 10 questões, divididas em duas partes:
