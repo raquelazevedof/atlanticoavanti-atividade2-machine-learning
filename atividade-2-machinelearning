@@ -3,7 +3,7 @@
 1. Escreva uma função que receba uma lista de números e retorne outra lista com os números 
 ímpares.
 
-#Uma forma simples de filtrar números ímpares é verificar o resto da divisão por 2.
+Uma forma simples de filtrar números ímpares é verificar o resto da divisão por 2.
 
 def filtrar_impares(lista):
     return [num for num in lista if num % 2 != 0]
@@ -18,7 +18,7 @@ entrada = [1, 2, 3, 4, 5]
 2. Escreva uma função que receba uma lista de números e retorne outra lista com os números
 primos presentes.
 
-#Primeiro cria-se uma função auxiliar para verificar se um número é primo.
+Primeiro cria-se uma função auxiliar para verificar se um número é primo.
 
 def eh_primo(n):
     if n < 2:
@@ -39,7 +39,7 @@ def filtrar_primos(lista):
 3. Escreva uma função que receba duas listas e retorne outra lista com os elementos presentes
 apenas em uma delas.
 
-#Esse caso é resolvido usando diferença simétrica.
+Esse caso é resolvido usando diferença simétrica.
 
 def somente_uma(lista1, lista2):
     return list(set(lista1) ^ set(lista2))
@@ -52,7 +52,7 @@ def somente_uma(lista1, lista2):
 4. Dada uma lista de números inteiros, escreva uma função para encontrar o segundo maior valor
 na lista.
 
-#Remove-se o maior valor e busca-se o próximo.
+Remove-se o maior valor e busca-se o próximo.
 
 def segundo_maior(lista):
     lista_unica = list(set(lista))  # Remove duplicados
@@ -79,7 +79,7 @@ Parte 2 — Visualização e Análise de Dados
 
 6. Como identificar e tratar outliers usando desvio padrão ou quartis?
 
-#Método do Desvio Padrão:
+Método do Desvio Padrão:
 
 media = df['coluna'].mean()
 desvio = df['coluna'].std()
