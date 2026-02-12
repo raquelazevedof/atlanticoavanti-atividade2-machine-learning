@@ -1,9 +1,11 @@
+Parte 1 - Funções em Python e Manipulação de Dados
+
+
 ---
 
-1. Escreva uma função que receba uma lista de números e retorne outra lista com os números 
-ímpares.
+1. Escreva uma função que receba uma lista de números e retorne outra lista com os números ímpares.
 
-Uma forma simples de filtrar números ímpares é verificar o resto da divisão por 2.
+# Filtrar números ímpares
 
 def filtrar_impares(lista):
     return [num for num in lista if num % 2 != 0]
@@ -15,10 +17,9 @@ entrada = [1, 2, 3, 4, 5]
 
 ---
 
-2. Escreva uma função que receba uma lista de números e retorne outra lista com os números
-primos presentes.
+2. Escreva uma função que receba uma lista de números e retorne outra lista com os números primos presentes.
 
-Primeiro cria-se uma função auxiliar para verificar se um número é primo.
+# Verifica se o número é primo
 
 def eh_primo(n):
     if n < 2:
@@ -28,6 +29,8 @@ def eh_primo(n):
             return False
     return True
 
+# Filtrar primos da lista
+
 def filtrar_primos(lista):
     return [num for num in lista if eh_primo(num)]
 
@@ -36,10 +39,9 @@ def filtrar_primos(lista):
 
 ---
 
-3. Escreva uma função que receba duas listas e retorne outra lista com os elementos presentes
-apenas em uma delas.
+3. Escreva uma função que receba duas listas e retorne outra lista com os elementos presentes apenas em uma delas.
 
-Esse caso é resolvido usando diferença simétrica.
+# Diferença simétrica
 
 def somente_uma(lista1, lista2):
     return list(set(lista1) ^ set(lista2))
@@ -49,10 +51,9 @@ def somente_uma(lista1, lista2):
 
 ---
 
-4. Dada uma lista de números inteiros, escreva uma função para encontrar o segundo maior valor
-na lista.
+4. Encontre o segundo maior valor de uma lista de inteiros.
 
-Remove-se o maior valor e busca-se o próximo.
+# Segundo maior valor
 
 def segundo_maior(lista):
     lista_unica = list(set(lista))  # Remove duplicados
@@ -64,31 +65,33 @@ def segundo_maior(lista):
 
 ---
 
-5. Crie uma função que receba uma lista de tuplas (nome, idade) e retorne a lista ordenada 
-pelo nome.
+5. Ordene uma lista de tuplas (nome, idade) pelo nome.
+
+# Ordenar por nome
 
 def ordenar_por_nome(pessoas):
     return sorted(pessoas, key=lambda p: p[0])
 
-# Exemplo: [("Ana",20),("Carlos",18),("Beatriz",25)] → ordenado alfabeticamente
+# Exemplo: [("Ana",20),("Carlos",18),("Beatriz",25)]
 
 
 ---
 
 Parte 2 — Visualização e Análise de Dados
 
+
+---
+
 6. Como identificar e tratar outliers usando desvio padrão ou quartis?
 
-Método do Desvio Padrão:
-
+# Método do Desvio Padrão
 media = df['coluna'].mean()
 desvio = df['coluna'].std()
 lim_inf = media - 3 * desvio
 lim_sup = media + 3 * desvio
 outliers = df[(df['coluna'] < lim_inf) | (df['coluna'] > lim_sup)]
 
-Método do IQR (Quartis):
-
+# Método do IQR (Quartis)
 Q1 = df['coluna'].quantile(0.25)
 Q3 = df['coluna'].quantile(0.75)
 IQR = Q3 - Q1
@@ -103,19 +106,18 @@ Tratamentos comuns: remover outliers, substituir por mediana, ou ajustar valores
 
 7. Como concatenar vários DataFrames, mesmo com colunas diferentes?
 
-Utiliza-se pd.concat().
-
 import pandas as pd
 
-df_total = pd.concat([df1, df2, df3], axis=0)  # Empilha linhas
-df_lado = pd.concat([df1, df2], axis=1)       # Empilha colunas
+# Empilha linhas
+df_total = pd.concat([df1, df2, df3], axis=0)
 
-#Pandas preenche valores ausentes com NaN.
+# Empilha colunas
+df_lado = pd.concat([df1, df2], axis=1)
 
 
 ---
 
-8. Como realizar a leitura de um arquivo CSV e exibir as primeiras linhas?
+8. Como ler um arquivo CSV e exibir as primeiras linhas?
 
 import pandas as pd
 
@@ -125,29 +127,27 @@ print(df.head())
 
 ---
 
-9. Como selecionar uma coluna e filtrar linhas com base em uma condição?
+9. Selecionar uma coluna e filtrar linhas com condição.
 
 idades = df["idade"]
 adultos = df[df["idade"] > 30]
 
-Também é possível combinar condições com & e |.
+# Combinação de condições
+# df[(df["idade"] > 20) & (df["salario"] > 3000)]
 
 
 ---
 
-10. Como lidar com valores ausentes (NaN) em um DataFrame?
+10. Como lidar com valores ausentes (NaN)?
 
-Remover valores ausentes:
-
+# Remover valores ausentes
 df_limpo = df.dropna()
 
-Preencher valores ausentes:
-
+# Preencher valores ausentes
 df_zeros = df.fillna(0)
 df_mediana = df.fillna(df.median())
 
-Identificar quantos valores ausentes existem:
-
+# Contagem de NaN
 df.isnull().sum()
 
 
